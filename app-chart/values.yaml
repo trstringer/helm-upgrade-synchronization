@@ -1,0 +1,11 @@
+app:
+  image:
+    repository: trstringer/long-op-upgrade
+    tag: latest
+    pullPolicy: Always
+  port: 8080
+  name: long-op
+
+service:
+  sourcePort: 80
+  targetPort: 8080
