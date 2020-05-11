@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: pre-upgrade
   annotations:
-    "helm.sh/hook": pre-install
+    "helm.sh/hook": pre-upgrade
 spec:
   template:
     metadata:
