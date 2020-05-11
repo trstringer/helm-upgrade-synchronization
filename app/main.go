@@ -14,7 +14,7 @@ func main() {
 
 	r.POST("/start", func(c *gin.Context) {
 		currentOperation = true
-		time.Sleep(time.Minute * 60)
+		time.Sleep(time.Second * 60)
 		currentOperation = false
 		c.JSON(http.StatusOK, "Completed...")
 	})
