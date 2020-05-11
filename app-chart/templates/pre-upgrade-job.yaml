@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pre-upgrade
+spec:
+  template:
+    metadata:
+      name: pre-upgrade
+    spec:
+      restartPolicy: {{ .Values.preUpgrade.restartPolicy }}
+      containers:
+        - name: pre-upgrade
+          image: "{{ .Values.preUpgrade.repository }}:{{ .Values.imageTag }}"
+          command: ["./pre-upgrade.sh", "{{ .Values.service.name }}"]

@@ -1,11 +1,19 @@
+imageTag: latest
+
 app:
   image:
-    repository: trstringer/long-op-upgrade
-    tag: latest
+    repository: trstringer/long-op-upgrade-app
     pullPolicy: Always
   port: 8080
   name: long-op
 
 service:
+  name: app-svc
   sourcePort: 80
   targetPort: 8080
+
+preUpgrade:
+  image:
+    repository: trstringer/long-op-upgrade-pre-upgrade
+    pullPolicy: Always
+  restartPolicy: OnFailure

@@ -1,6 +1,8 @@
 #!/bin/bash
 
+TAG=$(git rev-parse --short HEAD)
+
 helm upgrade \
     --install \
-    long-op-app \
-    app-chart
+    --set imageTag=$TAG \
+    long-op-app app-chart
