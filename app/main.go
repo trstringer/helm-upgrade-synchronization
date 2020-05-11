@@ -16,7 +16,7 @@ func main() {
 		currentOperation = true
 		time.Sleep(time.Minute * 60)
 		currentOperation = false
-		c.JSON(http.StatusOK, "Completed")
+		c.JSON(http.StatusOK, "Completed...")
 	})
 
 	r.GET("/upgradeable", func(c *gin.Context) {
