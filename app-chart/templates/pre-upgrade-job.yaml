@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: pre-upgrade
+  annotations:
+    "helm.sh/hook": pre-install
 spec:
   template:
     metadata:
