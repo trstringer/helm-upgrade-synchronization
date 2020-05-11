@@ -10,5 +10,5 @@ spec:
       restartPolicy: {{ .Values.preUpgrade.restartPolicy }}
       containers:
         - name: pre-upgrade
-          image: "{{ .Values.preUpgrade.repository }}:{{ .Values.imageTag }}"
+          image: "{{ .Values.preUpgrade.image.repository }}:{{ .Values.imageTag }}"
           command: ["./pre-upgrade.sh", "{{ .Values.service.name }}"]
