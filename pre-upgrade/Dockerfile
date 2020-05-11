@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y curl python3
+RUN apt-get update && apt-get install -y curl python3
 
 WORKDIR /usr/bin/local
 COPY pre-upgrade.sh .
