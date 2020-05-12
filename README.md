@@ -27,3 +27,4 @@ Once the API says that it is upgradeable, the pre-upgrade hook will successfully
 
  * Use `helm upgrade --no-hooks` to bypass any hooks in the event of an emergency.
  * Ensure that the `--timeout` for `helm upgrade` is appropriately set to avoid undesired timeouts (it defaults to 5 minutes).
+ * If you use `helm upgrade --install` and the release does *not* already exist, then the Helm operation is an install (not an upgrade) and a pre-upgrade hook will not run (this is most likely the desired state). Use a pre-install hook if you need that scenario handled.
