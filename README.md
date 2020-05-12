@@ -26,3 +26,4 @@ Once the API says that it is upgradeable, the pre-upgrade hook will successfully
 ## Considerations
 
  * Use `helm upgrade --no-hooks` to bypass any hooks in the event of an emergency.
+ * Ensure that the `--timeout` for `helm upgrade` is appropriately set to avoid undesired timeouts (it defaults to 5 minutes).
